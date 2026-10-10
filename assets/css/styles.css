@@ -1,0 +1,258 @@
+
+/* Estilos CSS3 responsivos - Landing Page Scrum */
+
+:root {
+    --cor-primaria: #635bff;
+    --cor-secundaria: #14b8a6;
+    --cor-fundo: #f8fafc;
+    --cor-texto: #1e293b;
+    --cor-borda: #e2e8f0;
+    --largura-maxima: 1120px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--cor-texto);
+    background: var(--cor-fundo);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: var(--cor-primaria);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #4941d1;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid #f59e0b;
+    outline-offset: 3px;
+}
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 1rem;
+    background: white;
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.header-container {
+    max-width: var(--largura-maxima);
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.site-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.hero {
+    padding: 4rem 1rem;
+    background: linear-gradient(135deg, #eef2ff, #f0fdfa);
+}
+
+.hero-content {
+    max-width: var(--largura-maxima);
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    gap: 2rem;
+}
+
+.hero h1 {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    margin-bottom: 1.5rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.25rem;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    color: white;
+    background: var(--cor-primaria);
+}
+
+.btn-primary:hover {
+    color: white;
+    background: #4941d1;
+}
+
+.roles-grid {
+    max-width: var(--largura-maxima);
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.role-card {
+    padding: 1.5rem;
+    background: white;
+    border: 1px solid var(--cor-borda);
+    border-radius: 14px;
+    box-shadow: 0 2px 8px #0000000d;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.role-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px #0000001a;
+}
+
+.events-timeline {
+    max-width: 900px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.event-item {
+    padding: 1.25rem;
+    background: white;
+    border-left: 4px solid var(--cor-secundaria);
+    border-radius: 8px;
+}
+
+.artifacts {
+    max-width: var(--largura-maxima);
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.artifact-card {
+    padding: 1.5rem;
+    background: white;
+    border: 1px solid var(--cor-borda);
+    border-radius: 14px;
+}
+
+#scrum-framework {
+    padding: 3rem 1rem;
+    background: #eef2ff;
+}
+
+#scrum-framework .framework-content {
+    max-width: var(--largura-maxima);
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.cta-section {
+    padding: 4rem 1rem;
+    text-align: center;
+    color: white;
+    background: #4941d1;
+}
+
+.cta-section h2 {
+    margin-bottom: 1rem;
+}
+
+.cta-section p {
+    margin-bottom: 1.5rem;
+}
+
+.cta-section .btn {
+    color: #4941d1;
+    background: white;
+}
+
+.site-footer {
+    padding: 2rem 1rem;
+    text-align: center;
+    background: white;
+    border-top: 1px solid var(--cor-borda);
+}
+
+/* Responsividade para tablets */
+@media (min-width: 600px) {
+    .header-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .roles-grid,
+    .artifacts {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .events-timeline {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .hero-content,
+    #scrum-framework .framework-content {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Responsividade para computadores */
+@media (min-width: 900px) {
+    .roles-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .artifacts {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* Respeita a preferência por movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto;
+        animation-duration: 0.01ms;
+        transition-duration: 0.01ms;
+    }
+}
